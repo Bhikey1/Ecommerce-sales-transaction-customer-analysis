@@ -115,31 +115,6 @@ GROUP BY 1, 2
 ORDER BY 3 DESC
 ;
 
--- Most sold product sub-category by order count
-SELECT sub_category, count(order_quantity) as order_Count
-FROM sales
-WHERE country = 'United States' and year != 2016
-GROUP BY 1
-ORDER BY 2 DESC
-;
-
--- Most sold sub-category by revenue
-SELECT sub_category, 
-sum(revenue) as revenue
-FROM sales
-WHERE country = 'United States' and year != 2016
-GROUP BY 1
-ORDER BY 2 DESC
-;
-
--- Most profitable sub-category
-SELECT sub_category, sum(profit) as profit
-FROM sales
-WHERE country = 'United States' and year != 2016
-GROUP BY 1
-ORDER BY 2 DESC
-;
-
 /* RECOMMENDATIONS 
 Personalized campaigns should be made to age groups: adults and young adults 
 in States such as California, Washington, and Oregon. It should be made in 
